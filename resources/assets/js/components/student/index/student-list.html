@@ -1,0 +1,41 @@
+<table class="table table-striped">
+   <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subjects</th>
+        <th>Actions</th>
+   </thead>
+    <tbody>
+        <tr ng-repeat="student in $ctrl.students">
+            <td>
+                {{ student.name }}
+            </td>
+            <td>
+                {{ student.email }}
+            </td>
+            <td>
+                <table>
+                    <tbody>
+                    <tr ng-repeat="subject in student.subjects" style="height:35px" ng-style="$first && {'height': '10px'}">
+                        <td>
+                            <span class="label label-primary Subject--span" >{{ subject.name }}</span>
+                        </td>
+                        <td width="30" style="text-align:right">
+                            <i class="glyphicon glyphicon-remove-sign warning-red" title="remove subject"></i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </td>
+            <td>
+                <div>
+                    <button class="btn btn-primary" ng-click="$ctrl.openSubjectForm(student)">Enroll Subject <i class="glyphicon glyphicon-plus "></i></button>
+                </div>
+                <div style="margin-top:20px">
+                    <button class="btn btn-danger" ng-click="$ctrl.confirmDeleteStudent()">Expel the devil  <i class="glyphicon glyphicon-remove-sign "></i></button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

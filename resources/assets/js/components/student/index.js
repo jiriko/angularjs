@@ -1,0 +1,1 @@
+export * from './index/student-index.module'
