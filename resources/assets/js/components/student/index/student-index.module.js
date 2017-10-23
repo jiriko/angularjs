@@ -3,11 +3,13 @@ import uiRouter from 'angular-ui-router'
 import StudentIndexComponent from './student-index.component'
 import StudentListModule from './student-list.module'
 import StudentService from '../student.service'
+import EnrollmentService from '../enrollment.service'
 
 export const StudentIndexModule = angular
     .module('StudentIndex', [uiRouter, StudentListModule])
     .component('student', StudentIndexComponent)
     .service('StudentService', StudentService)
+    .service('EnrollmentService', EnrollmentService)
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject';
         $stateProvider

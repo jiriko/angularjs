@@ -1,13 +1,35 @@
 class StudentService {
-    constructor($http) {
+    constructor($http, swal) {
         'ngInject'
         this.$http = $http
+        this.swal = swal
     }
 
-    all() {
-        return this.$http.get('/api/students').then((response) => {
+    all(data) {
+        let page = data && data.page || 1
+        return this.$http.get('/api/students?page=' + page).then((response) => {
             return response.data
         })
+    }
+
+    update(student) {
+        return this.$http.put('/api/students/' + student.id, student)
+            .then(function(response) {
+                return response.data
+            })
+            .catch(function() {
+                this.swal.error("Sorry.", "Can't update student.")
+            })
+    }
+
+    delete(student) {
+        return this.$http.delete('/api/students/' + student.id)
+            .then(function(response) {
+                return response.data
+            })
+            .catch(function() {
+                this.swal.error("Sorry.", "Can't delete student.")
+            })
     }
 
 }

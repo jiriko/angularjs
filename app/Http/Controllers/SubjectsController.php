@@ -2,9 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Subject;
+use App\Filters\SubjectFilters;
+use App\Http\Resources\Subject as SubjectResource;
 
 class SubjectsController extends Controller
 {
-    //
+    public function index(SubjectFilters $filters)
+    {
+        return SubjectResource::collection(
+            Subject::filter($filters)->paginate(15)
+        );
+    }
 }

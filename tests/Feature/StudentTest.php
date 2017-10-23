@@ -8,9 +8,37 @@ use App\Subject;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ViewStudentsTest extends TestCase
+class StudentTest extends TestCase
 {
     use RefreshDatabase;
+
+    /** @test */
+    function a_user_can_update_a_student()
+    {
+        $student = create(Student::class);
+        $newName = 'New Name';
+
+        $this->json('PUT', '/api/students/' . $student->id, [
+            'name' => $newName,
+            'email' => $student->email
+        ])->assertStatus(200);
+
+        $this->assertEquals($newName, $student->fresh()->name);
+    }
+
+    /** @test */
+    function a_user_can_delete_a_student()
+    {
+        $student = create(Student::class);
+
+        $this->json('DELETE', '/api/students/' . $student->id)
+            ->assertStatus(200);
+
+        $this->assertDatabaseMissing('students',
+            [
+                'id' => $student->id
+            ]);
+    }
 
     /** @test */
     function a_user_can_fetch_all_students()

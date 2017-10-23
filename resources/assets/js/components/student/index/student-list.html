@@ -8,10 +8,10 @@
     <tbody>
         <tr ng-repeat="student in $ctrl.students">
             <td>
-                {{ student.name }}
+                <span editable-text="student.name" e-name="email" onaftersave="$ctrl.updateStudent($data, 'name', student)" e-required>{{ student.name || 'name' }}</span>
             </td>
-            <td>
-                {{ student.email }}
+            <td width="40%">
+                <span editable-text="student.email" e-name="email" onbeforesave="$ctrl.checkEmail($data, student)" onaftersave="$ctrl.updateStudent($data, 'email', student)" e-required>{{ student.email || 'email' }}</span>
             </td>
             <td>
                 <table>
@@ -21,7 +21,7 @@
                             <span class="label label-primary Subject--span" >{{ subject.name }}</span>
                         </td>
                         <td width="30" style="text-align:right">
-                            <i class="glyphicon glyphicon-remove-sign warning-red" title="remove subject"></i>
+                            <i class="glyphicon glyphicon-remove-sign warning-red" title="remove subject" ng-click="$ctrl.removeSubject(subject,student)"></i>
                         </td>
                     </tr>
                     </tbody>
@@ -33,7 +33,7 @@
                     <button class="btn btn-primary" ng-click="$ctrl.openSubjectForm(student)">Enroll Subject <i class="glyphicon glyphicon-plus "></i></button>
                 </div>
                 <div style="margin-top:20px">
-                    <button class="btn btn-danger" ng-click="$ctrl.confirmDeleteStudent()">Expel the devil  <i class="glyphicon glyphicon-remove-sign "></i></button>
+                    <button class="btn btn-danger" ng-click="$ctrl.removeStudent(student)">Expel the devil  <i class="glyphicon glyphicon-remove-sign "></i></button>
                 </div>
             </td>
         </tr>

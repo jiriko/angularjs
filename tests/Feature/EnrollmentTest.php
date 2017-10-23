@@ -25,7 +25,7 @@ class EnrollmentTest extends TestCase
     }
 
     /** @test */
-    function students_can_unenroll_to_subjects()
+    function students_can_unenroll_a_subject()
     {
         $student = create(Student::class);
         $subject1 = create(Subject::class, ['name' => 'Chemistry']);

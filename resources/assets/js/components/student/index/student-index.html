@@ -1,3 +1,14 @@
 <h4>Students</h4>
 <br>
-<student-list students="$ctrl.students"></student-list>
+<student-list students="$ctrl.students"
+              on-update-student="$ctrl.updateStudent($event)"
+              on-remove-subject="$ctrl.removeSubject($event)"
+              on-add-subject="$ctrl.addSubject($event)"
+              on-remove-student="$ctrl.removeStudent($event)"
+></student-list>
+
+<ul uib-pagination
+    total-items="$ctrl.totalItems"
+    ng-model="$ctrl.currentPage"
+    items-per-page="$ctrl.perPage"
+    ng-change="$ctrl.pageChanged()"></ul>

@@ -16,7 +16,10 @@ class Subject extends Resource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name
+            'name' => $this->name,
+            'enrollment_id' => $this->whenPivotLoaded('enrollments', function() {
+                return $this->pivot->id;
+            })
         ];
     }
 }

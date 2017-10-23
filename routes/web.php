@@ -19,7 +19,13 @@ Route::prefix('api')->group(function () {
 
 
     Route::get('students', ['uses' => 'StudentsController@index'])->name('students.index');
+    Route::put('students/{student}', ['uses' => 'StudentsController@update'])->name('students.update');
+    Route::delete('students/{student}', ['uses' => 'StudentsController@destroy'])->name('student.destroy');
 
+
+    Route::get('subjects', ['uses' => 'SubjectsController@index'])->name('subjects.index');
+
+    Route::get('validation', ['uses' => 'ValidationController'])->name('validation');
 });
 
 Route::get('{any?}', function ($any = null) {

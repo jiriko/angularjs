@@ -55,3 +55,36 @@ i.warning-red {
 
 @import '~sweetalert2/dist/sweetalert2.min.css';
 
+@import '~angular-xeditable/dist/css/xeditable.css';
+
+.editable-input {
+  width:60% !important;
+}
+
+.editable-controls, .editable-wrap {
+  width:100% !important;
+}
+
+span.editable-click {
+  border-bottom: none;
+  color: #636b6f;
+  cursor: pointer;
+}
+
+span.editable-click:hover {
+  font-weight:700;
+}
+
+.modal--close {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  color: #FFF;
+  font-size: 14px;
+  opacity: 1;
+}
+
+body {
+  margin-bottom: 50px;
+}
+

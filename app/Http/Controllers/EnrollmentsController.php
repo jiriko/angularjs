@@ -9,16 +9,14 @@ class EnrollmentsController extends Controller
 {
     public function store()
     {
-        Enrollment::create(
-            request()->validate(
-                [
+        $enrollment = Enrollment::create(
+            request()->validate([
                     'student_id' => 'required',
                     'subject_id' => 'required'
-                ]
-            )
+                ])
         );
 
-        return response([]);
+        return response(['data' => $enrollment]);
     }
 
     public function destroy(Enrollment $enrollment)

@@ -10,6 +10,25 @@ class StudentsController extends Controller
 {
     public function index()
     {
-        return StudentResource::collection(Student::paginate(10));
+        return StudentResource::collection(
+            Student::with('subjects')->paginate(5)
+        );
+    }
+
+    public function update(Student $student)
+    {
+        $student->update(request()->validate([
+            'email' => 'required|email|unique:students,email,' . $student->id,
+            'name' => 'required'
+        ]));
+
+        return response([]);
+    }
+
+    public function destroy(Student $student)
+    {
+        $student->delete();
+
+        return response([]);
     }
 }
