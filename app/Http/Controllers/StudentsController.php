@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use App\Filters\StudentFilters;
 use App\Http\Resources\Student as StudentResource;
 
 class StudentsController extends Controller
 {
-    public function index()
+    public function index(StudentFilters $filters)
     {
         return StudentResource::collection(
-            Student::with('subjects')->paginate(5)
+            Student::with('subjects')
+                ->filter($filters)
+                ->paginate(5)
         );
     }
 

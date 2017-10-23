@@ -57,6 +57,8 @@ i.warning-red {
 
 @import '~angular-xeditable/dist/css/xeditable.css';
 
+@import '~angular-loading-bar/build/loading-bar.css';
+
 .editable-input {
   width:60% !important;
 }
@@ -88,3 +90,11 @@ body {
   margin-bottom: 50px;
 }
 
+.float-left{
+  display:block;
+  float:left
+}
+
+.ml-2 {
+  margin-left: 2em;
+}

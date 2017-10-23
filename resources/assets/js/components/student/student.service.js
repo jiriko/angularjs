@@ -7,7 +7,8 @@ class StudentService {
 
     all(data) {
         let page = data && data.page || 1
-        return this.$http.get('/api/students?page=' + page).then((response) => {
+        let query = data && data.query || ''
+        return this.$http.get('/api/students?page=' + page + '&query=' + query).then((response) => {
             return response.data
         })
     }

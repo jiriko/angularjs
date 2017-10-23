@@ -1,7 +1,9 @@
 import angular from 'angular';
-import { StudentIndexModule } from './student';
+import { StudentIndexModule, StudentCreateModule } from './student';
+
 export const ComponentsModule = angular
     .module('app.components', [
-        StudentIndexModule
+        StudentIndexModule,
+        StudentCreateModule
     ])
     .name;

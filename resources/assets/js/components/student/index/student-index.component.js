@@ -14,15 +14,21 @@ const StudentIndexComponent = {
         }
 
         $onInit() {
+            this.query = ''
             this.refreshData(this.studentResource)
+
+            this.fetchStudents = _.debounce(() => {
+                this.studentService.all({page: this.currentPage, query: this.query})
+                    .then((response) => {
+                        this.refreshData(response)
+                        window.scrollTo(200, 0);
+                    })
+            },300)
         }
 
-        pageChanged() {
-            this.studentService.all({page: this.currentPage})
-                .then((response) => {
-                    this.refreshData(response)
-                    window.s
-                })
+        searchStudents() {
+            this.currentPage = 1
+            this.fetchStudents()
         }
 
         refreshData(response) {

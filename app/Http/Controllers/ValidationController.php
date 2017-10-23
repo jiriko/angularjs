@@ -23,7 +23,7 @@ class ValidationController extends Controller
         return response([]);
     }
 
-    protected function getValidationRules()
+    private function getValidationRules()
     {
         $rules = $this->getSimpleRules();
 
@@ -36,21 +36,21 @@ class ValidationController extends Controller
         return $rules->values()->implode('|');
     }
 
-    protected function getComplexRules()
+    private function getComplexRules()
     {
         return collect(['unique'])->filter(function ($rule) {
             return in_array($rule, explode(',', request('type')));
         });
     }
 
-    protected function getSimpleRules()
+    private function getSimpleRules()
     {
         return collect(explode(',', request('type')))->filter(function ($rule) {
             return !in_array($rule, $this->getComplexRules()->all());
         });
     }
 
-    protected function getTable()
+    private function getTable()
     {
         $tables = [
             '1' => 'users',
@@ -64,7 +64,7 @@ class ValidationController extends Controller
         return $tables[request('t')];
     }
 
-    protected function verifyInput()
+    private function verifyInput()
     {
         request()->validate([
             'type' => 'required',
@@ -73,7 +73,7 @@ class ValidationController extends Controller
     }
 
     //make it a class later
-    protected function getUniqueRule()
+    private function getUniqueRule()
     {
         request()->validate([
             'field' => 'required',

@@ -8,7 +8,7 @@
         <form>
             <div class="form-group">
                 <input type="text" ng-model="$ctrl.subject"
-                       ng-model-options="{ debounce: 500 }"
+                       ng-model-options="{ debounce: 300 }"
                        placeholder="Enter subject name"
                        uib-typeahead="subject as subject.name for subject in $ctrl.getSubjects($viewValue)"
                        typeahead-loading="loadingLocations"
