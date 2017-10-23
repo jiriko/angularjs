@@ -75124,7 +75124,7 @@ var StudentIndexComponent = {
 /* 106 */
 /***/ (function(module, exports) {
 
-module.exports = "<h4>Students</h4>\r\n<br>\r\n<student-list students=\"$ctrl.students\"\r\n              on-update-student=\"$ctrl.updateStudent($event)\"\r\n              on-remove-subject=\"$ctrl.removeSubject($event)\"\r\n              on-add-subject=\"$ctrl.addSubject($event)\"\r\n              on-remove-student=\"$ctrl.removeStudent($event)\"\r\n></student-list>\r\n\r\n<ul uib-pagination\r\n    total-items=\"$ctrl.totalItems\"\r\n    ng-model=\"$ctrl.currentPage\"\r\n    items-per-page=\"$ctrl.perPage\"\r\n    ng-change=\"$ctrl.pageChanged()\"></ul>";
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-8\">\r\n        <h4>Students</h4>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <input type=\"text\" class=\"form-control\" placeholder=\"search...\">\r\n    </div>\r\n</div>\r\n<br>\r\n<student-list students=\"$ctrl.students\"\r\n              on-update-student=\"$ctrl.updateStudent($event)\"\r\n              on-remove-subject=\"$ctrl.removeSubject($event)\"\r\n              on-add-subject=\"$ctrl.addSubject($event)\"\r\n              on-remove-student=\"$ctrl.removeStudent($event)\"\r\n></student-list>\r\n\r\n<ul uib-pagination\r\n    total-items=\"$ctrl.totalItems\"\r\n    ng-model=\"$ctrl.currentPage\"\r\n    items-per-page=\"$ctrl.perPage\"\r\n    ng-change=\"$ctrl.pageChanged()\"></ul>";
 
 /***/ }),
 /* 107 */

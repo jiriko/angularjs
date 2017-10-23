@@ -1,4 +1,11 @@
-<h4>Students</h4>
+<div class="row">
+    <div class="col-md-8">
+        <h4>Students</h4>
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="search...">
+    </div>
+</div>
 <br>
 <student-list students="$ctrl.students"
               on-update-student="$ctrl.updateStudent($event)"
