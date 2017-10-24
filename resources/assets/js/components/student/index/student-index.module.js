@@ -4,7 +4,7 @@ import StudentIndexComponent from './student-index.component'
 import StudentListModule from './student-list.module'
 import StudentService from '../student.service'
 import EnrollmentService from '../enrollment.service'
-import { SortableHeader } from '../../util'
+import { SortableHeader } from '../../partials'
 
 export const StudentIndexModule = angular
     .module('StudentIndex', [uiRouter, StudentListModule, SortableHeader])
