@@ -15,7 +15,6 @@ const SortableHeaderComponent = {
         }
 
         changeSort(sortBy) {
-            console.log(sortBy)
             this.onSortChange({
                 $event: { sortBy }
             })

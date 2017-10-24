@@ -78270,24 +78270,27 @@ module.exports = "<div class=\"container\">\r\n\r\n    <!-- Static navbar -->\r\
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subject__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__partials__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subject__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__partials__ = __webpack_require__(136);
 
 
 
 
 
-//console.log(SortableHeader)
-var ComponentsModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('app.components', [__WEBPACK_IMPORTED_MODULE_3__partials__["a" /* SortableHeaderModule */], __WEBPACK_IMPORTED_MODULE_2__subject__["a" /* SubjectIndexModule */], __WEBPACK_IMPORTED_MODULE_1__student__["b" /* StudentIndexModule */], __WEBPACK_IMPORTED_MODULE_1__student__["a" /* StudentCreateModule */]]).name;
+/* ngInject */
+var ComponentsModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('app.components', [__WEBPACK_IMPORTED_MODULE_3__partials__["a" /* PartialsModule */], __WEBPACK_IMPORTED_MODULE_2__subject__["a" /* SubjectIndexModule */], __WEBPACK_IMPORTED_MODULE_1__student__["b" /* StudentIndexModule */], __WEBPACK_IMPORTED_MODULE_1__student__["a" /* StudentCreateModule */]]).name;
 
 /***/ }),
 /* 115 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_module__ = __webpack_require__(116);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__sortable_header_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_student_index_module__ = __webpack_require__(116);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__index_student_index_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_student_create_module__ = __webpack_require__(127);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__create_student_create_module__["a"]; });
+
 
 
 /***/ }),
@@ -78295,105 +78298,13 @@ var ComponentsModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('a
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SortableHeaderModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__ = __webpack_require__(117);
-
-
-
-var SortableHeaderModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('SortableHeaderModule', []).component('sortableHeader', __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__["a" /* default */]).name;
-
-/***/ }),
-/* 117 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_html__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__sortable_header_html__);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-
-var SortableHeaderComponent = {
-    bindings: {
-        name: '<',
-        sortBy: '<',
-        sortOrder: '<',
-        onSortChange: '&'
-    },
-    template: __WEBPACK_IMPORTED_MODULE_0__sortable_header_html___default.a,
-    transclude: true,
-    controller: function () {
-        function SortableHeaderComponent() {
-            'ngInject';
-
-            _classCallCheck(this, SortableHeaderComponent);
-        }
-
-        _createClass(SortableHeaderComponent, [{
-            key: 'changeSort',
-            value: function changeSort(sortBy) {
-                console.log(sortBy);
-                this.onSortChange({
-                    $event: { sortBy: sortBy }
-                });
-            }
-        }, {
-            key: '$onChanges',
-            value: function $onChanges(changes) {
-                if (changes.name) {
-                    this.namee = this.name;
-                }
-
-                if (changes.sortOrder) {
-                    this.sortOrder = this.sortOrder;
-                }
-
-                if (changes.sortBy) {
-                    this.sortBy = this.sortBy;
-                }
-            }
-        }]);
-
-        return SortableHeaderComponent;
-    }()
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (SortableHeaderComponent);
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports) {
-
-module.exports = "<div ng-click=\"$ctrl.changeSort($ctrl.name)\" class=\"sortable\">\r\n    <ng-transclude></ng-transclude>\r\n    <span ng-show=\"$ctrl.sortBy == $ctrl.name\">\r\n            <i ng-class=\"[$ctrl.sortOrder=='asc' ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down']\"class=\"glyphicon\"></i>\r\n    </span>\r\n</div>";
-
-/***/ }),
-/* 119 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_student_index_module__ = __webpack_require__(120);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__index_student_index_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_student_create_module__ = __webpack_require__(131);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__create_student_create_module__["a"]; });
-
-
-
-/***/ }),
-/* 120 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentIndexModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_index_component__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__student_list_module__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__student_service__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enrollment_service__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_index_component__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__student_list_module__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__student_service__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__enrollment_service__ = __webpack_require__(126);
 
 
 
@@ -78414,11 +78325,11 @@ var StudentIndexModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module(
 }).name;
 
 /***/ }),
-/* 121 */
+/* 117 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_index_html__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_index_html__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_index_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__student_index_html__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -78573,35 +78484,35 @@ var StudentIndexComponent = {
 /* harmony default export */ __webpack_exports__["a"] = (StudentIndexComponent);
 
 /***/ }),
-/* 122 */
+/* 118 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-8\">\r\n        <h4 class=\"float-left\"><i class=\"glyphicon glyphicon-cog\"></i> Students</h4>\r\n        <a ui-sref=\"students-create\" href class=\"float-left ml-2 btn btn-primary\"><i class=\"glyphicon glyphicon-plus\"></i> Create</a>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <input ng-model=\"$ctrl.query\"\r\n               class=\"form-control\"\r\n               ng-keyup=\"$ctrl.searchStudents()\"\r\n               placeholder=\"search...\">\r\n    </div>\r\n</div>\r\n<br>\r\n<student-list students=\"$ctrl.students\"\r\n              on-update-student=\"$ctrl.updateStudent($event)\"\r\n              on-remove-subject=\"$ctrl.removeSubject($event)\"\r\n              on-add-subject=\"$ctrl.addSubject($event)\"\r\n              on-remove-student=\"$ctrl.removeStudent($event)\"\r\n              sort-order=\"$ctrl.sortOrder\"\r\n              sort-by=\"$ctrl.sortBy\"\r\n              on-sort-change=\"$ctrl.changeSort($event)\"\r\n></student-list>\r\n\r\n<ul uib-pagination\r\n    total-items=\"$ctrl.totalItems\"\r\n    ng-model=\"$ctrl.currentPage\"\r\n    items-per-page=\"$ctrl.perPage\"\r\n    ng-change=\"$ctrl.fetchStudents()\"></ul>";
 
 /***/ }),
-/* 123 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_list_component__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_subject_module__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_list_component__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_subject_module__ = __webpack_require__(122);
 
 
 
 
-/** ngInject */
+/* ngInject */
 var StudentListModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('StudentListModule', [__WEBPACK_IMPORTED_MODULE_2__add_subject_module__["a" /* AddSubject */]]).component('studentList', __WEBPACK_IMPORTED_MODULE_1__student_list_component__["a" /* default */]).name;
 
 /* harmony default export */ __webpack_exports__["a"] = (StudentListModule);
 
 /***/ }),
-/* 124 */
+/* 120 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_list_html__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_list_html__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_list_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__student_list_html__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__add_subject_html__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__add_subject_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__add_subject_html__);
@@ -78743,21 +78654,21 @@ var StudentListComponent = {
 /* harmony default export */ __webpack_exports__["a"] = (StudentListComponent);
 
 /***/ }),
-/* 125 */
+/* 121 */
 /***/ (function(module, exports) {
 
 module.exports = "<table class=\"table table-striped\">\r\n   <thead>\r\n       <th>\r\n           <sortable-header\r\n                   name=\"'name'\"\r\n                   sort-order=\"$ctrl.sortOrder\"\r\n                   sort-by=\"$ctrl.sortBy\"\r\n                   on-sort-change=\"$ctrl.changeSort($event)\"\r\n           >\r\n               Name\r\n           </sortable-header>\r\n       </th>\r\n        <th>\r\n            <sortable-header\r\n                    name=\"'email'\"\r\n                    sort-order=\"$ctrl.sortOrder\"\r\n                    sort-by=\"$ctrl.sortBy\"\r\n                    on-sort-change=\"$ctrl.changeSort($event)\"\r\n            >\r\n                Email\r\n            </sortable-header>\r\n        </th>\r\n        <th>\r\n            <sortable-header\r\n                    name=\"'created_at'\"\r\n                    sort-order=\"$ctrl.sortOrder\"\r\n                    sort-by=\"$ctrl.sortBy\"\r\n                    on-sort-change=\"$ctrl.changeSort($event)\"\r\n            >\r\n                Enrolled\r\n            </sortable-header>\r\n        </th>\r\n        <th>Subjects</th>\r\n        <th>Actions</th>\r\n   </thead>\r\n    <tbody>\r\n        <tr ng-repeat=\"student in $ctrl.students\">\r\n            <td>\r\n                <span editable-text=\"student.name\" e-name=\"email\" onaftersave=\"$ctrl.updateStudent($data, 'name', student)\" e-required>{{ student.name || 'name' }}</span>\r\n            </td>\r\n            <td>\r\n                <span editable-text=\"student.email\" e-name=\"email\" onbeforesave=\"$ctrl.checkEmail($data, student)\" onaftersave=\"$ctrl.updateStudent($data, 'email', student)\" e-required>{{ student.email || 'email' }}</span>\r\n            </td>\r\n            <td>{{ student.created }}</td>\r\n            <td>\r\n                <table>\r\n                    <tbody>\r\n                    <tr ng-repeat=\"subject in student.subjects\" style=\"height:35px\" ng-style=\"$first && {'height': '10px'}\">\r\n                        <td width=\"70\">\r\n                            <span class=\"label label-primary Subject--span\" >{{ subject.name }}</span>\r\n                        </td>\r\n                        <td width=\"30\" style=\"text-align:right\">\r\n                            <i class=\"glyphicon glyphicon-remove-sign warning-red\" title=\"remove subject\" ng-click=\"$ctrl.removeSubject(subject,student)\"></i>\r\n                        </td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </td>\r\n            <td>\r\n                <div>\r\n                    <button class=\"btn btn-primary\" ng-click=\"$ctrl.openSubjectForm(student)\"><i class=\"glyphicon glyphicon-plus \"></i> Enroll Subject</button>\r\n                </div>\r\n                <div style=\"margin-top:20px\">\r\n                    <button class=\"btn btn-danger\" ng-click=\"$ctrl.removeStudent(student)\"><i class=\"glyphicon glyphicon-remove-sign \"></i> Expel the devil</button>\r\n                </div>\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n";
 
 /***/ }),
-/* 126 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddSubject; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__add_subject_component__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subject_subject_service__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__add_subject_component__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subject_subject_service__ = __webpack_require__(124);
 
 
 
@@ -78765,7 +78676,7 @@ module.exports = "<table class=\"table table-striped\">\r\n   <thead>\r\n       
 var AddSubject = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('AddSubject', []).component('addSubject', __WEBPACK_IMPORTED_MODULE_1__add_subject_component__["a" /* default */]).service('SubjectService', __WEBPACK_IMPORTED_MODULE_2__subject_subject_service__["a" /* default */]).name;
 
 /***/ }),
-/* 127 */
+/* 123 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78839,7 +78750,7 @@ var AddSubjectComponent = {
 /* harmony default export */ __webpack_exports__["a"] = (AddSubjectComponent);
 
 /***/ }),
-/* 128 */
+/* 124 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78872,7 +78783,7 @@ var SubjectService = function () {
 /* harmony default export */ __webpack_exports__["a"] = (SubjectService);
 
 /***/ }),
-/* 129 */
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78895,8 +78806,8 @@ var StudentService = function () {
         value: function all(data) {
             var page = data && data.page || 1;
             var query = data && data.query || '';
-            var sort = data && data.sort || '';
-            var sortBy = data && data.sortBy || '';
+            var sort = data && data.sort || 'desc';
+            var sortBy = data && data.sortBy || 'created_at';
             return this.$http.get('/api/students?page=' + page + '&query=' + query + '&sort=' + sort + '&sortBy=' + sortBy).then(function (response) {
                 return response.data;
             });
@@ -78927,7 +78838,7 @@ var StudentService = function () {
 /* harmony default export */ __webpack_exports__["a"] = (StudentService);
 
 /***/ }),
-/* 130 */
+/* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78974,14 +78885,14 @@ var EnrollmentService = function () {
 /* harmony default export */ __webpack_exports__["a"] = (EnrollmentService);
 
 /***/ }),
-/* 131 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentCreateModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_create_component__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_create_component__ = __webpack_require__(128);
 
 
 
@@ -78995,13 +78906,13 @@ var StudentCreateModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module
 }).name;
 
 /***/ }),
-/* 132 */
+/* 128 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_create_html__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_create_html__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__student_create_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__student_create_html__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_form__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_form__ = __webpack_require__(130);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79054,17 +78965,17 @@ var StudentCreateComponent = {
 /* harmony default export */ __webpack_exports__["a"] = (StudentCreateComponent);
 
 /***/ }),
-/* 133 */
+/* 129 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-12 mb-2\">\r\n        <h4 class=\"float-left\"><i class=\"glyphicon glyphicon-plus\"></i> Create Student</h4>\r\n    </div>\r\n    <div class=\"col-md-6 col-sm-12\">\r\n        <form>\r\n            <div class=\"form-group\"\r\n                 ng-class=\"{'has-error' : $ctrl.$scope.form.errors.has('name')}\"\r\n            >\r\n                <label class=\"control-label\" for=\"name\">Name:</label>\r\n                <input ng-model=\"$ctrl.$scope.form.name\" class=\"form-control\" id=\"name\">\r\n                <span class=\"help-block error\" ng-if=\"$ctrl.$scope.form.errors.has('name')\" ng-bind=\"$ctrl.$scope.form.errors.get('name')\"></span>\r\n            </div>\r\n            <div class=\"form-group\"\r\n                 ng-class=\"{'has-error' : $ctrl.$scope.form.errors.has('email')}\"\r\n            >\r\n                <label class=\"control-label\" for=\"pwd\">Email:</label>\r\n                <input ng-model=\"$ctrl.$scope.form.email\" class=\"form-control\" id=\"email\">\r\n                <span class=\"help-block error\" ng-if=\"$ctrl.$scope.form.errors.has('email')\" ng-bind=\"$ctrl.$scope.form.errors.get('email')\"></span>\r\n            </div>\r\n            <a href ui-sref=\"students-index\" class=\"btn btn-danger\">Cancel</a>\r\n            <button type=\"submit\" ng-click=\"$ctrl.submitStudent()\" ng-disabled=\"$ctrl.$scope.form.errors.any() || $ctrl.$scope.form.submitting\" class=\"btn btn-primary\">\r\n                <span ng-show=\"! $ctrl.$scope.form.submitting\"><i class=\"fa fa-save\"></i> Save</span>\r\n                <div class=\"la-ball-fall-2\" ng-show=\"$ctrl.$scope.form.submitting\">\r\n                    <div></div>\r\n                    <div></div>\r\n                    <div></div>\r\n                </div>\r\n            </button>\r\n        </form>\r\n    </div>\r\n</div>";
 
 /***/ }),
-/* 134 */
+/* 130 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__errors__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__errors__ = __webpack_require__(131);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79256,7 +79167,7 @@ var Form = function () {
 /* harmony default export */ __webpack_exports__["a"] = (Form);
 
 /***/ }),
-/* 135 */
+/* 131 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79347,23 +79258,23 @@ var Errors = function () {
 /* harmony default export */ __webpack_exports__["a"] = (Errors);
 
 /***/ }),
-/* 136 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_subject_index_module__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_subject_index_module__ = __webpack_require__(133);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__index_subject_index_module__["a"]; });
 
 
 /***/ }),
-/* 137 */
+/* 133 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubjectIndexModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__subject_index_component__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__subject_index_component__ = __webpack_require__(134);
 
 
 var SubjectIndexModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('SubjectIndex', []).component('subjectIndex', __WEBPACK_IMPORTED_MODULE_1__subject_index_component__["a" /* default */]).config(function ($stateProvider, $urlRouterProvider) {
@@ -79376,11 +79287,11 @@ var SubjectIndexModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module(
 }).name;
 
 /***/ }),
-/* 138 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__subject_index_html__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__subject_index_html__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__subject_index_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__subject_index_html__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -79400,10 +79311,98 @@ var SubjectIndexComponent = {
 /* harmony default export */ __webpack_exports__["a"] = (SubjectIndexComponent);
 
 /***/ }),
-/* 139 */
+/* 135 */
 /***/ (function(module, exports) {
 
 module.exports = "<h1>TEST</h1>\r\n<!--<div class=\"row\">\r\n    <div class=\"col-md-8\">\r\n        <h4 class=\"float-left\"><i class=\"glyphicon glyphicon-cog\"></i> Subjects</h4>\r\n        <a ui-sref=\"subjects-create\" href class=\"float-left ml-2 btn btn-primary\"><i class=\"glyphicon glyphicon-plus\"></i> Create</a>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <input ng-model=\"$ctrl.query\"\r\n               class=\"form-control\"\r\n               ng-keyup=\"$ctrl.searchStudents()\"\r\n               placeholder=\"search...\">\r\n    </div>\r\n</div>\r\n<br>-->\r\n<!--\r\n<student-list students=\"$ctrl.students\"\r\n              on-update-student=\"$ctrl.updateStudent($event)\"\r\n              on-remove-subject=\"$ctrl.removeSubject($event)\"\r\n              on-add-subject=\"$ctrl.addSubject($event)\"\r\n              on-remove-student=\"$ctrl.removeStudent($event)\"\r\n              sort-order=\"$ctrl.sortOrder\"\r\n              sort-by=\"$ctrl.sortBy\"\r\n              on-sort-change=\"$ctrl.changeSort($event)\"\r\n></student-list>\r\n\r\n<ul uib-pagination\r\n    total-items=\"$ctrl.totalItems\"\r\n    ng-model=\"$ctrl.currentPage\"\r\n    items-per-page=\"$ctrl.perPage\"\r\n    ng-change=\"$ctrl.fetchStudents()\"></ul>-->\r\n";
+
+/***/ }),
+/* 136 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_module__ = __webpack_require__(146);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__partials_module__["a"]; });
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SortableHeaderModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__ = __webpack_require__(138);
+
+
+
+var SortableHeaderModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('SortableHeaderModule', []).component('sortableHeader', __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__["a" /* default */]).name;
+
+/***/ }),
+/* 138 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_html__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__sortable_header_html__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var SortableHeaderComponent = {
+    bindings: {
+        name: '<',
+        sortBy: '<',
+        sortOrder: '<',
+        onSortChange: '&'
+    },
+    template: __WEBPACK_IMPORTED_MODULE_0__sortable_header_html___default.a,
+    transclude: true,
+    controller: function () {
+        function SortableHeaderComponent() {
+            'ngInject';
+
+            _classCallCheck(this, SortableHeaderComponent);
+        }
+
+        _createClass(SortableHeaderComponent, [{
+            key: 'changeSort',
+            value: function changeSort(sortBy) {
+                this.onSortChange({
+                    $event: { sortBy: sortBy }
+                });
+            }
+        }, {
+            key: '$onChanges',
+            value: function $onChanges(changes) {
+                if (changes.name) {
+                    this.namee = this.name;
+                }
+
+                if (changes.sortOrder) {
+                    this.sortOrder = this.sortOrder;
+                }
+
+                if (changes.sortBy) {
+                    this.sortBy = this.sortBy;
+                }
+            }
+        }]);
+
+        return SortableHeaderComponent;
+    }()
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (SortableHeaderComponent);
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports) {
+
+module.exports = "<div ng-click=\"$ctrl.changeSort($ctrl.name)\" class=\"sortable\">\r\n    <ng-transclude></ng-transclude>\r\n    <span ng-show=\"$ctrl.sortBy == $ctrl.name\">\r\n            <i ng-class=\"[$ctrl.sortOrder=='asc' ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down']\"class=\"glyphicon\"></i>\r\n    </span>\r\n</div>";
 
 /***/ }),
 /* 140 */
@@ -89619,6 +89618,20 @@ angular.module('ui.bootstrap.datepickerPopup').run(function() {!angular.$$csp().
 angular.module('ui.bootstrap.tooltip').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTooltipCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style>'); angular.$$uibTooltipCss = true; });
 angular.module('ui.bootstrap.timepicker').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTimepickerCss && angular.element(document).find('head').prepend('<style type="text/css">.uib-time input{width:50px;}</style>'); angular.$$uibTimepickerCss = true; });
 angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTypeaheadCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style>'); angular.$$uibTypeaheadCss = true; });
+
+/***/ }),
+/* 146 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartialsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_header_module__ = __webpack_require__(137);
+
+
+
+var PartialsModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('PartialsModule', [__WEBPACK_IMPORTED_MODULE_1__sortable_header_module__["a" /* SortableHeaderModule */]]).name;
 
 /***/ })
 /******/ ]);

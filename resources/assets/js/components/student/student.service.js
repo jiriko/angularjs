@@ -8,8 +8,8 @@ class StudentService {
     all(data) {
         let page = data && data.page || 1
         let query = data && data.query || ''
-        let sort = data && data.sort || ''
-        let sortBy = data && data.sortBy || ''
+        let sort = data && data.sort || 'desc'
+        let sortBy = data && data.sortBy || 'created_at'
         return this.$http.get('/api/students?page=' + page + '&query=' + query + '&sort=' + sort + '&sortBy=' + sortBy).then((response) => {
             return response.data
         })

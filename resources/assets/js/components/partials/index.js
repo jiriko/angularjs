@@ -1,1 +1,1 @@
-export * from './sortable-header.module'
+export * from './partials.module'
