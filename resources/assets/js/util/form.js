@@ -5,7 +5,7 @@ class Form {
      *
      * @param {object} data
      */
-    constructor(data, $http, $scope) {
+    constructor(data, $http) {
         this.originalData = data
         this.submitting = false
         this.$http = $http
@@ -16,20 +16,17 @@ class Form {
 
         this.errors = new Errors()
         this.resetFields = false
-
-        this.$scope = $scope
     }
 
 
-    watch(form) {
-        console.log(form.originalData)
-        for (let field in form.originalData) {
-            this.$scope.$watch(`form.${field}`, (value) => {
+    watch(scope) {
+        for (let field in scope.form.originalData) {
+            scope.$watch(`form.${field}`, (value) => {
                 console.log(value)
                 if(value) {
-                    form.errors.clear(field);
+                    scope.form.errors.clear(field);
                 }
-            });
+            },true);
         }
     }
 

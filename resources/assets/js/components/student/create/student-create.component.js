@@ -11,19 +11,24 @@ const StudentCreateComponent = {
             this.enrollmentService = EnrollmentService
             this.$http = $http
             this.$scope = $scope
+            this.$state = $state
         }
 
         $onInit() {
-            this.form = new Form({
+            this.$scope.form = new Form({
                 name: '',
                 email: ''
-            }, this.$http, this.$scope)
+            }, this.$http)
 
-            this.form.watch(this.form);
+            this.$scope.form.watch(this.$scope);
         }
 
         submitStudent() {
-            this.form.post('/api/students')
+            this.$scope.form.post('/api/students')
+                .then(student => {
+                    this.$state.go('students-index')
+                    this.swal('Success!', student.name + ' has been added!')
+                })
         }
     }
 }
