@@ -54,11 +54,10 @@ class Errors {
      */
     clear(field) {
         if (field) {
-            Vue.delete(this.errors,field);
+            delete this.errors[field]
             return;
         }
 
-        Vue.delete(this,'errors')
         this.errors = {};
     }
 }

@@ -5,23 +5,23 @@
     <div class="col-md-6 col-sm-12">
         <form>
             <div class="form-group"
-                 ng-class="{'has-error' : $ctrl.form.errors.has('name')}"
+                 ng-class="{'has-error' : $ctrl.$scope.form.errors.has('name')}"
             >
                 <label class="control-label" for="name">Name:</label>
-                <input ng-model="$ctrl.form.name" class="form-control" id="name">
-                <span class="help-block error" ng-if="$ctrl.form.errors.has('name')" ng-bind="$ctrl.form.errors.get('name')"></span>
+                <input ng-model="$ctrl.$scope.form.name" class="form-control" id="name">
+                <span class="help-block error" ng-if="$ctrl.$scope.form.errors.has('name')" ng-bind="$ctrl.$scope.form.errors.get('name')"></span>
             </div>
             <div class="form-group"
-                 ng-class="{'has-error' : $ctrl.form.errors.has('email')}"
+                 ng-class="{'has-error' : $ctrl.$scope.form.errors.has('email')}"
             >
                 <label class="control-label" for="pwd">Email:</label>
-                <input ng-model="$ctrl.form.email" class="form-control" id="email">
-                <span class="help-block error" ng-if="$ctrl.form.errors.has('email')" ng-bind="$ctrl.form.errors.get('email')"></span>
+                <input ng-model="$ctrl.$scope.form.email" class="form-control" id="email">
+                <span class="help-block error" ng-if="$ctrl.$scope.form.errors.has('email')" ng-bind="$ctrl.$scope.form.errors.get('email')"></span>
             </div>
             <a href ui-sref="students-index" class="btn btn-danger">Cancel</a>
-            <button type="submit" ng-click="$ctrl.submitStudent()" :disable="$ctrl.form.errors.any() || $ctrl.form.submitting" class="btn btn-primary">
-                <span ng-show="! $ctrl.form.submitting"><i class="fa fa-save"></i> Save</span>
-                <div class="la-ball-fall-2" ng-show="$ctrl.form.submitting">
+            <button type="submit" ng-click="$ctrl.submitStudent()" ng-disabled="$ctrl.$scope.form.errors.any() || $ctrl.$scope.form.submitting" class="btn btn-primary">
+                <span ng-show="! $ctrl.$scope.form.submitting"><i class="fa fa-save"></i> Save</span>
+                <div class="la-ball-fall-2" ng-show="$ctrl.$scope.form.submitting">
                     <div></div>
                     <div></div>
                     <div></div>
