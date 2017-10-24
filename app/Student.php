@@ -16,7 +16,6 @@ class Student extends BaseModel
     public static function fetch(StudentFilters $filters)
     {
         return static::with('subjects')
-            ->latest()
             ->filter($filters)
             ->paginate(5);
     }

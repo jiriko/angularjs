@@ -11,7 +11,7 @@ class StudentFilters extends Filters
      *
      * @var array
      */
-    protected $filters = ['query'];
+    protected $filters = ['query','sortBy'];
 
     /**
      * Filter the query by a given name.
@@ -22,6 +22,11 @@ class StudentFilters extends Filters
     {
         return $this->builder->where('name','like', "$query%")
                 ->orWhere('email', 'like', "$query%");
+    }
+
+    protected function sortBy($column)
+    {
+        return $this->builder->orderBy($column, $this->request->get('sort','asc'));
     }
 
 }

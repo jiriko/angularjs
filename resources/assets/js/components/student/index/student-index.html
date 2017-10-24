@@ -16,6 +16,9 @@
               on-remove-subject="$ctrl.removeSubject($event)"
               on-add-subject="$ctrl.addSubject($event)"
               on-remove-student="$ctrl.removeStudent($event)"
+              sort-order="$ctrl.sortOrder"
+              sort-by="$ctrl.sortBy"
+              on-sort-change="$ctrl.changeSort($event)"
 ></student-list>
 
 <ul uib-pagination

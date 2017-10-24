@@ -7,7 +7,10 @@ const StudentListComponent = {
         onUpdateStudent: '&',
         onRemoveSubject: '&',
         onAddSubject: '&',
-        onRemoveStudent: '&'
+        onRemoveStudent: '&',
+        sortOrder: '<',
+        sortBy: '<',
+        onSortChange: '&',
     },
     template,
     controller: class StudentListComponent {
@@ -23,6 +26,20 @@ const StudentListComponent = {
             if (changes.students) {
                 this.students = _.clone(this.students)
             }
+
+            if (changes.sortOrder) {
+                this.sortOrder = this.sortOrder
+            }
+
+            if (changes.sortBy) {
+                this.sortBy = this.sortBy
+            }
+        }
+
+        changeSort(sortBy) {
+            this.onSortChange({
+                $event: { sortBy }
+            })
         }
 
         openSubjectForm(student) {

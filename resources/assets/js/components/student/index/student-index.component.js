@@ -16,14 +16,32 @@ const StudentIndexComponent = {
         $onInit() {
             this.query = ''
             this.refreshData(this.studentResource)
+            this.sortOrder = 'desc'
+            this.sortBy = 'created_at'
 
             this.fetchStudents = _.debounce(() => {
-                this.studentService.all({page: this.currentPage, query: this.query})
+                this.studentService.all({
+                    page: this.currentPage,
+                    query: this.query,
+                    sortBy: this.sortBy,
+                    sort: this.sortOrder
+                })
                     .then((response) => {
                         this.refreshData(response)
                         window.scrollTo(200, 0);
                     })
             },300)
+        }
+
+        changeSort({sortBy}) {
+            if(sortBy == this.sortBy) {
+                this.sortOrder = this.sortOrder=='asc' ? 'desc' : 'asc'
+            }else {
+                this.sortOrder = sortBy=='created_at' ? 'desc' : 'asc'
+            }
+            this.sortBy = sortBy
+            this.currentPage = 1
+            this.fetchStudents()
         }
 
         searchStudents() {

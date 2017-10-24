@@ -18,6 +18,7 @@ class Student extends Resource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
+            'created' => $this->created_at->diffForHumans(),
             'subjects' => Subject::collection($this->whenLoaded('subjects'))
         ];
     }
