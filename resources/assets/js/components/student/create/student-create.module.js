@@ -1,9 +1,8 @@
 import angular from 'angular'
-import uiRouter from 'angular-ui-router'
 import StudentCreateComponent from './student-create.component'
 
 export const StudentCreateModule = angular
-    .module('StudentCreate', [uiRouter])
+    .module('StudentCreate', [])
     .component('studentCreate', StudentCreateComponent)
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject';
@@ -12,6 +11,5 @@ export const StudentCreateModule = angular
                 url: '/students/new',
                 component: 'studentCreate',
             })
-        $urlRouterProvider.otherwise('/')
     })
     .name

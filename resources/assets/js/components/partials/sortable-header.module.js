@@ -1,8 +1,8 @@
 import angular from 'angular'
-import SortableHeader from './sortable-header.component'
+import sortableHeader from './sortable-header.component'
 
 
-export const SortableHeader = angular
-    .module('SortableHeader', [])
-    .component('sortableHeader', SortableHeader)
+export const SortableHeaderModule = angular
+    .module('SortableHeaderModule', [])
+    .component('sortableHeader', sortableHeader)
     .name

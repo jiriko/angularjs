@@ -1,19 +1,21 @@
 import template from './sortable-header.html'
 
-const SortableHeader = {
+const SortableHeaderComponent = {
     bindings: {
         name: '<',
         sortBy: '<',
-        sortOrder: '<'
+        sortOrder: '<',
         onSortChange: '&'
     },
     template,
-    controller: class SortableHeader {
+    transclude: true,
+    controller: class SortableHeaderComponent {
         constructor() {
             'ngInject'
         }
 
         changeSort(sortBy) {
+            console.log(sortBy)
             this.onSortChange({
                 $event: { sortBy }
             })
@@ -36,4 +38,4 @@ const SortableHeader = {
     }
 }
 
-export default SortableHeader
+export default SortableHeaderComponent

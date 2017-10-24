@@ -36,7 +36,7 @@ const StudentListComponent = {
             }
         }
 
-        changeSort(sortBy) {
+        changeSort({sortBy}) {
             this.onSortChange({
                 $event: { sortBy }
             })
