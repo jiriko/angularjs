@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class ValidationController extends Controller
 {
     /**
-     * This will validate a field (request('q'))
-     * based on the validation types (request('type'))
+     * This will validate a field request('q')
+     * based on the validation types request('type')
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
@@ -23,6 +23,12 @@ class ValidationController extends Controller
         return response([]);
     }
 
+    /**
+     * This will create the validation rules
+     * based on request('type')
+     * ex: email,required,unique
+     * @return String rules
+     */
     private function getValidationRules()
     {
         $rules = $this->getSimpleRules();
@@ -36,6 +42,12 @@ class ValidationController extends Controller
         return $rules->values()->implode('|');
     }
 
+    /**
+     * This is for rules like unique, max etc
+     * which requires parameters
+     *
+     * @return static
+     */
     private function getComplexRules()
     {
         return collect(['unique'])->filter(function ($rule) {
@@ -43,6 +55,11 @@ class ValidationController extends Controller
         });
     }
 
+    /**
+     * This is for simple rules like numeric, email, require etc..
+     * which do not require parameters
+     * @return static
+     */
     private function getSimpleRules()
     {
         return collect(explode(',', request('type')))->filter(function ($rule) {
@@ -50,6 +67,12 @@ class ValidationController extends Controller
         });
     }
 
+    /**
+     * Look up for the table currently used for unique rule
+     * by request('t')
+     *
+     * @return mixed
+     */
     private function getTable()
     {
         $tables = [
@@ -64,6 +87,11 @@ class ValidationController extends Controller
         return $tables[request('t')];
     }
 
+    /**
+     * The basic fields are required: request('type') ex: email,required
+     * and request('q) is the value of the field to be validated.
+     *
+     */
     private function verifyInput()
     {
         request()->validate([

@@ -18,9 +18,9 @@ class EnrollmentTest extends TestCase
         $student = create(Student::class);
         $subject1 = create(Subject::class, ['name' => 'Chemistry']);
 
-        $response = $this->post('api/enrollments', ['student_id' => $student->id, 'subject_id' => $subject1->id]);
+        $this->post('api/enrollments', ['student_id' => $student->id, 'subject_id' => $subject1->id])
+            ->assertStatus(200);
 
-        $response->assertStatus(200);
         $this->assertEquals($subject1->id, $student->subjects->first()->id);
     }
 
@@ -33,9 +33,9 @@ class EnrollmentTest extends TestCase
 
         $this->assertEquals($subject1->id, $student->subjects->first()->id);
 
-        $response = $this->delete('api/enrollments/' . $enrollment->id);
+        $this->delete('api/enrollments/' . $enrollment->id)
+            ->assertStatus(200);
 
-        $response->assertStatus(200);
         $this->assertEmpty($student->fresh()->subjects);
     }
 }
