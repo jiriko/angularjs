@@ -1,5 +1,6 @@
 import angular from 'angular'
 import SubjectIndexComponent from './subject-index.component'
+import SubjectService from '../subject.service'
 export const SubjectIndexModule = angular
     .module('SubjectIndex', [])
     .component('subjectIndex', SubjectIndexComponent)

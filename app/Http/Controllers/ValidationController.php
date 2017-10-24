@@ -77,7 +77,8 @@ class ValidationController extends Controller
     {
         $tables = [
             '1' => 'users',
-            '2' => 'students'
+            '2' => 'students',
+            '3' => 'subjects'
         ];
 
         if (!array_key_exists(request('t'), $tables)) {

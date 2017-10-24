@@ -14,9 +14,7 @@ export const StudentIndexModule = angular
             .state('students-index', {
                 url: '/students',
                 component: 'studentIndex',
-                resolve: {
-                    studentResource:  StudentService => StudentService.all()
-                }
+                reloadOnSearch: false
             })
     })
     .name

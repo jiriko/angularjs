@@ -19,7 +19,7 @@ Route::prefix('api')->group(function () {
 
     Route::resource('students','StudentsController', ['only' => ['index','update','destroy','store']]);
 
-    Route::get('subjects', ['uses' => 'SubjectsController@index'])->name('subjects.index');
+    Route::resource('subjects','SubjectsController', ['only' => ['index','update','destroy','store']]);
 
     Route::get('validation', ['uses' => 'ValidationController'])->name('validation');
 });

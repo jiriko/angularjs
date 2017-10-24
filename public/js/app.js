@@ -1041,6 +1041,14 @@ exports.services = services;
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(81);
+module.exports = angular;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 /**
@@ -1064,14 +1072,6 @@ __export(__webpack_require__(42));
 __export(__webpack_require__(99));
 __export(__webpack_require__(102));
 //# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(81);
-module.exports = angular;
-
 
 /***/ }),
 /* 6 */
@@ -1833,7 +1833,7 @@ exports.Param = Param;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ng_from_import = __webpack_require__(5);
+var ng_from_import = __webpack_require__(4);
 var ng_from_global = angular;
 exports.ng = (ng_from_import && ng_from_import.module) ? ng_from_import : ng_from_global;
 //# sourceMappingURL=angular.js.map
@@ -4972,7 +4972,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 /** for typedoc */
 var angular_1 = __webpack_require__(11);
-var core_1 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 var views_1 = __webpack_require__(31);
 var templateFactory_1 = __webpack_require__(103);
 var stateProvider_1 = __webpack_require__(58);
@@ -5081,7 +5081,7 @@ exports.getLocals = function (ctx) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 function getNg1ViewConfigFactory() {
     var templateFactory = null;
     return function (path, view) {
@@ -8519,7 +8519,7 @@ exports.BrowserLocationConfig = BrowserLocationConfig;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module ng1 */ /** for typedoc */
-var core_1 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 /**
  * The Angular 1 `StateProvider`
  *
@@ -8665,8 +8665,8 @@ exports.StateProvider = StateProvider;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module url */ /** */
-var core_1 = __webpack_require__(4);
-var core_2 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
+var core_2 = __webpack_require__(5);
 /**
  * Manages rules for client-side URL
  *
@@ -8891,17 +8891,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_scss__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__app_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_ui_router__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_ui_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_ui_router__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_loading_bar__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_loading_bar__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular_loading_bar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular_loading_bar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_h_sweetalert__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_h_sweetalert__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular_h_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular_h_sweetalert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_ui_bootstrap__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_ui_bootstrap__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular_ui_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular_ui_bootstrap__);
 __webpack_require__(63);
 
@@ -75980,9 +75980,9 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-var core = __webpack_require__(4);
+var core = __webpack_require__(5);
 exports.core = core;
-__export(__webpack_require__(4));
+__export(__webpack_require__(5));
 __export(__webpack_require__(30));
 __export(__webpack_require__(31));
 __export(__webpack_require__(58));
@@ -76603,7 +76603,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /** @module view */
 /** for typedoc */
 var angular_1 = __webpack_require__(11);
-var core_1 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 /**
  * Service which manages loading of templates from a ViewConfig.
  */
@@ -76801,7 +76801,7 @@ var scopeBindings = function (bindingsObj) { return Object.keys(bindingsObj || {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module ng1 */ /** */
-var core_1 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 var services_1 = __webpack_require__(30);
 /**
  * This is a [[StateBuilder.builder]] function for angular1 `onEnter`, `onExit`,
@@ -76831,7 +76831,7 @@ exports.getStateHookBuilder = function (hookName) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 /**
  * Implements UI-Router LocationServices and LocationConfig using Angular 1's $location service
  */
@@ -77297,7 +77297,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module directives
  */ /** for typedoc */
 var angular_1 = __webpack_require__(11);
-var core_1 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 /** @hidden */
 function parseStateRef(ref) {
     var paramsOnly = ref.match(/^\s*({[^}]*})\s*$/), parsed;
@@ -77920,8 +77920,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module directives
  */ /** for typedoc */
 var angular_1 = __webpack_require__(11);
-var angular_2 = __webpack_require__(5);
-var core_1 = __webpack_require__(4);
+var angular_2 = __webpack_require__(4);
+var core_1 = __webpack_require__(5);
 var views_1 = __webpack_require__(31);
 var services_1 = __webpack_require__(30);
 exports.uiView = ['$view', '$animate', '$uiViewScroll', '$interpolate', '$q',
@@ -78268,7 +78268,7 @@ module.exports = "<div class=\"container\">\r\n\r\n    <!-- Static navbar -->\r\
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subject__ = __webpack_require__(132);
@@ -78299,7 +78299,7 @@ var ComponentsModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('a
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentIndexModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_index_component__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__student_list_module__ = __webpack_require__(119);
@@ -78316,11 +78316,7 @@ var StudentIndexModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module(
     $stateProvider.state('students-index', {
         url: '/students',
         component: 'studentIndex',
-        resolve: {
-            studentResource: function studentResource(StudentService) {
-                return StudentService.all();
-            }
-        }
+        reloadOnSearch: false
     });
 }).name;
 
@@ -78343,7 +78339,7 @@ var StudentIndexComponent = {
     },
     template: __WEBPACK_IMPORTED_MODULE_0__student_index_html___default.a,
     controller: function () {
-        function StudentIndexComponent($state, swal, StudentService, EnrollmentService) {
+        function StudentIndexComponent($state, swal, StudentService, EnrollmentService, $location) {
             'ngInject';
 
             _classCallCheck(this, StudentIndexComponent);
@@ -78351,6 +78347,8 @@ var StudentIndexComponent = {
             this.swal = swal;
             this.studentService = StudentService;
             this.enrollmentService = EnrollmentService;
+            this.$state = $state;
+            this.$location = $location;
         }
 
         _createClass(StudentIndexComponent, [{
@@ -78358,22 +78356,38 @@ var StudentIndexComponent = {
             value: function $onInit() {
                 var _this = this;
 
-                this.query = '';
-                this.refreshData(this.studentResource);
-                this.sortOrder = 'desc';
-                this.sortBy = 'created_at';
+                this.query = this.$location.search().query;
+                this.sortOrder = this.$location.search().sort;
+                this.sortBy = this.$location.search().sortBy;
+                this.currentPage = this.$location.search().page;
+
+                console.log(this.currentPage);
 
                 this.fetchStudents = _.debounce(function () {
-                    _this.studentService.all({
+                    var data = {
                         page: _this.currentPage,
                         query: _this.query,
                         sortBy: _this.sortBy,
                         sort: _this.sortOrder
-                    }).then(function (response) {
+                    };
+
+                    _this.$location.search(_.omit(data, _.isEmpty));
+
+                    _this.studentService.all(data).then(function (response) {
                         _this.refreshData(response);
                         window.scrollTo(200, 0);
                     });
                 }, 300);
+
+                this.studentService.all({
+                    page: this.currentPage,
+                    query: this.query,
+                    sortBy: this.sortBy,
+                    sort: this.sortOrder
+                }).then(function (response) {
+                    _this.refreshData(response);
+                    window.scrollTo(200, 0);
+                });
             }
         }, {
             key: 'changeSort',
@@ -78494,7 +78508,7 @@ module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-8\">\r\n       
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_list_component__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_subject_module__ = __webpack_require__(122);
@@ -78657,7 +78671,7 @@ var StudentListComponent = {
 /* 121 */
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table table-striped\">\r\n   <thead>\r\n       <th>\r\n           <sortable-header\r\n                   name=\"'name'\"\r\n                   sort-order=\"$ctrl.sortOrder\"\r\n                   sort-by=\"$ctrl.sortBy\"\r\n                   on-sort-change=\"$ctrl.changeSort($event)\"\r\n           >\r\n               Name\r\n           </sortable-header>\r\n       </th>\r\n        <th>\r\n            <sortable-header\r\n                    name=\"'email'\"\r\n                    sort-order=\"$ctrl.sortOrder\"\r\n                    sort-by=\"$ctrl.sortBy\"\r\n                    on-sort-change=\"$ctrl.changeSort($event)\"\r\n            >\r\n                Email\r\n            </sortable-header>\r\n        </th>\r\n        <th>\r\n            <sortable-header\r\n                    name=\"'created_at'\"\r\n                    sort-order=\"$ctrl.sortOrder\"\r\n                    sort-by=\"$ctrl.sortBy\"\r\n                    on-sort-change=\"$ctrl.changeSort($event)\"\r\n            >\r\n                Enrolled\r\n            </sortable-header>\r\n        </th>\r\n        <th>Subjects</th>\r\n        <th>Actions</th>\r\n   </thead>\r\n    <tbody>\r\n        <tr ng-repeat=\"student in $ctrl.students\">\r\n            <td>\r\n                <span editable-text=\"student.name\" e-name=\"email\" onaftersave=\"$ctrl.updateStudent($data, 'name', student)\" e-required>{{ student.name || 'name' }}</span>\r\n            </td>\r\n            <td>\r\n                <span editable-text=\"student.email\" e-name=\"email\" onbeforesave=\"$ctrl.checkEmail($data, student)\" onaftersave=\"$ctrl.updateStudent($data, 'email', student)\" e-required>{{ student.email || 'email' }}</span>\r\n            </td>\r\n            <td>{{ student.created }}</td>\r\n            <td>\r\n                <table>\r\n                    <tbody>\r\n                    <tr ng-repeat=\"subject in student.subjects\" style=\"height:35px\" ng-style=\"$first && {'height': '10px'}\">\r\n                        <td width=\"70\">\r\n                            <span class=\"label label-primary Subject--span\" >{{ subject.name }}</span>\r\n                        </td>\r\n                        <td width=\"30\" style=\"text-align:right\">\r\n                            <i class=\"glyphicon glyphicon-remove-sign warning-red\" title=\"remove subject\" ng-click=\"$ctrl.removeSubject(subject,student)\"></i>\r\n                        </td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </td>\r\n            <td>\r\n                <div>\r\n                    <button class=\"btn btn-primary\" ng-click=\"$ctrl.openSubjectForm(student)\"><i class=\"glyphicon glyphicon-plus \"></i> Enroll Subject</button>\r\n                </div>\r\n                <div style=\"margin-top:20px\">\r\n                    <button class=\"btn btn-danger\" ng-click=\"$ctrl.removeStudent(student)\"><i class=\"glyphicon glyphicon-remove-sign \"></i> Expel the devil</button>\r\n                </div>\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n";
+module.exports = "<table class=\"table table-striped\">\r\n   <thead>\r\n       <th>\r\n           <sortable-header\r\n                   name=\"'name'\"\r\n                   sort-order=\"$ctrl.sortOrder\"\r\n                   sort-by=\"$ctrl.sortBy\"\r\n                   on-sort-change=\"$ctrl.changeSort($event)\"\r\n           >\r\n               Name\r\n           </sortable-header>\r\n       </th>\r\n        <th>\r\n            <sortable-header\r\n                    name=\"'email'\"\r\n                    sort-order=\"$ctrl.sortOrder\"\r\n                    sort-by=\"$ctrl.sortBy\"\r\n                    on-sort-change=\"$ctrl.changeSort($event)\"\r\n            >\r\n                Email\r\n            </sortable-header>\r\n        </th>\r\n        <th>\r\n            <sortable-header\r\n                    name=\"'created_at'\"\r\n                    sort-order=\"$ctrl.sortOrder\"\r\n                    sort-by=\"$ctrl.sortBy\"\r\n                    on-sort-change=\"$ctrl.changeSort($event)\"\r\n            >\r\n                Enrolled\r\n            </sortable-header>\r\n        </th>\r\n        <th>Subjects</th>\r\n        <th>Actions</th>\r\n   </thead>\r\n    <tbody>\r\n        <tr ng-repeat=\"student in $ctrl.students\">\r\n            <td>\r\n                <span editable-text=\"student.name\" onaftersave=\"$ctrl.updateStudent($data, 'name', student)\" e-required>{{ student.name || 'name' }}</span>\r\n            </td>\r\n            <td>\r\n                <span editable-text=\"student.email\" onbeforesave=\"$ctrl.checkEmail($data, student)\" onaftersave=\"$ctrl.updateStudent($data, 'email', student)\" e-required>{{ student.email || 'email' }}</span>\r\n            </td>\r\n            <td>{{ student.created }}</td>\r\n            <td>\r\n                <table>\r\n                    <tbody>\r\n                    <tr ng-repeat=\"subject in student.subjects\" style=\"height:35px\" ng-style=\"$first && {'height': '10px'}\">\r\n                        <td width=\"70\">\r\n                            <span class=\"label label-primary Subject--span\" >{{ subject.name }}</span>\r\n                        </td>\r\n                        <td width=\"30\" style=\"text-align:right\">\r\n                            <i class=\"glyphicon glyphicon-remove-sign warning-red\" title=\"remove subject\" ng-click=\"$ctrl.removeSubject(subject,student)\"></i>\r\n                        </td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n            </td>\r\n            <td>\r\n                <div>\r\n                    <button class=\"btn btn-primary\" ng-click=\"$ctrl.openSubjectForm(student)\"><i class=\"glyphicon glyphicon-plus \"></i> Enroll Subject</button>\r\n                </div>\r\n                <div style=\"margin-top:20px\">\r\n                    <button class=\"btn btn-danger\" ng-click=\"$ctrl.removeStudent(student)\"><i class=\"glyphicon glyphicon-remove-sign \"></i> Expel the devil</button>\r\n                </div>\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n";
 
 /***/ }),
 /* 122 */
@@ -78665,7 +78679,7 @@ module.exports = "<table class=\"table table-striped\">\r\n   <thead>\r\n       
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddSubject; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__add_subject_component__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subject_subject_service__ = __webpack_require__(124);
@@ -78770,10 +78784,30 @@ var SubjectService = function () {
 
     _createClass(SubjectService, [{
         key: 'all',
-        value: function all(name) {
+        value: function all() {
+            var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
             return this.$http.get('/api/subjects?name=' + name).then(function (response) {
                 return response.data;
             }).catch(function () {});
+        }
+    }, {
+        key: 'update',
+        value: function update(subject) {
+            return this.$http.put('/api/subjects/' + subject.id, subject).then(function (response) {
+                return response.data;
+            }).catch(function () {
+                this.swal.error("Sorry.", "Can't update subject.");
+            });
+        }
+    }, {
+        key: 'delete',
+        value: function _delete(subject) {
+            return this.$http.delete('/api/subjects/' + subject.id).then(function (response) {
+                return response.data;
+            }).catch(function () {
+                this.swal.error("Sorry.", "Can't delete subject.");
+            });
         }
     }]);
 
@@ -78890,7 +78924,7 @@ var EnrollmentService = function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentCreateModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_create_component__ = __webpack_require__(128);
 
@@ -79272,9 +79306,11 @@ var Errors = function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubjectIndexModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__subject_index_component__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__subject_service__ = __webpack_require__(124);
+
 
 
 var SubjectIndexModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('SubjectIndex', []).component('subjectIndex', __WEBPACK_IMPORTED_MODULE_1__subject_index_component__["a" /* default */]).config(function ($stateProvider, $urlRouterProvider) {
@@ -79293,19 +79329,106 @@ var SubjectIndexModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module(
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__subject_index_html__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__subject_index_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__subject_index_html__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 
 
 var SubjectIndexComponent = {
     template: __WEBPACK_IMPORTED_MODULE_0__subject_index_html___default.a,
-    controller: function SubjectIndexComponent($state, swal) {
-        'ngInject';
+    controller: function () {
+        function SubjectIndexComponent($state, swal, SubjectService, $q, $http) {
+            'ngInject';
 
-        _classCallCheck(this, SubjectIndexComponent);
+            _classCallCheck(this, SubjectIndexComponent);
 
-        this.swal = swal;
-    }
+            this.swal = swal;
+            this.subjectService = SubjectService;
+            this.$q = $q;
+            this.$http = $http;
+        }
+
+        _createClass(SubjectIndexComponent, [{
+            key: '$onInit',
+            value: function $onInit() {
+                var _this = this;
+
+                this.query = '';
+                this.currentPage = 1;
+
+                this.subjectService.all(this.query).then(function (response) {
+                    _this.refreshData(response);
+                    window.scrollTo(200, 0);
+                });
+
+                this.fetchSubjects = _.debounce(function () {
+                    _this.subjectService.all(_this.query).then(function (response) {
+                        _this.refreshData(response);
+                        window.scrollTo(200, 0);
+                    });
+                }, 300);
+            }
+        }, {
+            key: 'updateSubject',
+            value: function updateSubject(value, field, subject) {
+                subject[field] = value;
+                this.subjects.splice(this.subjects.indexOf(subject), 1, subject);
+                this.swal('Success!', subject.name + ' has been updated.');
+                this.subjectService.update(subject);
+            }
+        }, {
+            key: 'checkName',
+            value: function checkName(name, subject) {
+                var q = this.$q.defer();
+
+                this.$http.get('/api/validation?type=required,unique&field=name&t=3&id=' + subject.id + '&q=' + name).then(function () {
+                    q.resolve();
+                }).catch(function (e) {
+                    q.reject("Name is required and must be valid and unique.");
+                });
+
+                return q.promise;
+            }
+        }, {
+            key: 'removeSubject',
+            value: function removeSubject(subject) {
+                var _this2 = this;
+
+                this.swal({
+                    title: "Are you sure?",
+                    text: "This will remove subjects from students too!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, I'm sure!"
+                }).then(function () {
+                    _this2.subjects.splice(_this2.subjects.indexOf(subject), 1);
+                    _this2.swal('Success!', 'Subject has been removed.');
+                    _this2.subjectService.delete(subject);
+                });
+            }
+        }, {
+            key: 'searchSubjects',
+            value: function searchSubjects() {
+                this.currentPage = 1;
+                this.fetchSubjects();
+            }
+        }, {
+            key: 'refreshData',
+            value: function refreshData(response) {
+                console.log(response);
+                this.subjects = _.clone(response.data);
+                this.links = _.clone(response.links);
+                this.meta = _.clone(response.meta);
+                this.currentPage = this.meta.current_page;
+                this.totalItems = this.meta.total;
+                this.perPage = this.meta.per_page;
+            }
+        }]);
+
+        return SubjectIndexComponent;
+    }()
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (SubjectIndexComponent);
@@ -79314,14 +79437,14 @@ var SubjectIndexComponent = {
 /* 135 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>TEST</h1>\r\n<!--<div class=\"row\">\r\n    <div class=\"col-md-8\">\r\n        <h4 class=\"float-left\"><i class=\"glyphicon glyphicon-cog\"></i> Subjects</h4>\r\n        <a ui-sref=\"subjects-create\" href class=\"float-left ml-2 btn btn-primary\"><i class=\"glyphicon glyphicon-plus\"></i> Create</a>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <input ng-model=\"$ctrl.query\"\r\n               class=\"form-control\"\r\n               ng-keyup=\"$ctrl.searchStudents()\"\r\n               placeholder=\"search...\">\r\n    </div>\r\n</div>\r\n<br>-->\r\n<!--\r\n<student-list students=\"$ctrl.students\"\r\n              on-update-student=\"$ctrl.updateStudent($event)\"\r\n              on-remove-subject=\"$ctrl.removeSubject($event)\"\r\n              on-add-subject=\"$ctrl.addSubject($event)\"\r\n              on-remove-student=\"$ctrl.removeStudent($event)\"\r\n              sort-order=\"$ctrl.sortOrder\"\r\n              sort-by=\"$ctrl.sortBy\"\r\n              on-sort-change=\"$ctrl.changeSort($event)\"\r\n></student-list>\r\n\r\n<ul uib-pagination\r\n    total-items=\"$ctrl.totalItems\"\r\n    ng-model=\"$ctrl.currentPage\"\r\n    items-per-page=\"$ctrl.perPage\"\r\n    ng-change=\"$ctrl.fetchStudents()\"></ul>-->\r\n";
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-8\">\r\n        <h4 class=\"float-left\"><i class=\"glyphicon glyphicon-cog\"></i> Subjects</h4>\r\n        <input type=\"text\"  class=\" ml-2 form-control float-left\" style=\"width:200px\">\r\n        <a ui-sref=\"students-create\" href class=\"float-left btn btn-primary\"><i class=\"glyphicon glyphicon-plus\"></i> Create</a>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n        <input ng-model=\"$ctrl.query\"\r\n               class=\"form-control\"\r\n               ng-keyup=\"$ctrl.searchStudents()\"\r\n               placeholder=\"search...\">\r\n    </div>\r\n</div>\r\n<br>\r\n<table class=\"table table-striped\">\r\n    <thead>\r\n    <th>Name</th>\r\n    <th>Actions</th>\r\n    </thead>\r\n    <tbody>\r\n    <tr ng-repeat=\"subject in $ctrl.subjects\">\r\n        <td>\r\n            <span editable-text=\"subject.name\"\r\n                  onaftersave=\"$ctrl.updateSubject($data, 'name', subject)\"\r\n                  onbeforesave=\"$ctrl.checkName($data, subject)\"\r\n                  e-required>\r\n                {{ subject.name || 'name' }}\r\n            </span>\r\n        </td>\r\n        </td>\r\n        <td>\r\n            <div style=\"margin-top:20px\">\r\n                <button class=\"btn btn-danger\" ng-click=\"$ctrl.removeSubject(subject)\"><i class=\"glyphicon glyphicon-remove-sign \"></i> Remove</button>\r\n            </div>\r\n        </td>\r\n    </tr>\r\n    </tbody>\r\n</table>\r\n<ul uib-pagination\r\n    total-items=\"$ctrl.totalItems\"\r\n    ng-model=\"$ctrl.currentPage\"\r\n    items-per-page=\"$ctrl.perPage\"\r\n    ng-change=\"$ctrl.fetchStudents()\"></ul>\r\n";
 
 /***/ }),
 /* 136 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_module__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_module__ = __webpack_require__(137);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__partials_module__["a"]; });
 
 
@@ -79330,21 +79453,35 @@ module.exports = "<h1>TEST</h1>\r\n<!--<div class=\"row\">\r\n    <div class=\"c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SortableHeaderModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartialsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_header_module__ = __webpack_require__(138);
 
 
 
-var SortableHeaderModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('SortableHeaderModule', []).component('sortableHeader', __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__["a" /* default */]).name;
+var PartialsModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('PartialsModule', [__WEBPACK_IMPORTED_MODULE_1__sortable_header_module__["a" /* SortableHeaderModule */]]).name;
 
 /***/ }),
 /* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_html__ = __webpack_require__(139);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SortableHeaderModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__ = __webpack_require__(139);
+
+
+
+var SortableHeaderModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('SortableHeaderModule', []).component('sortableHeader', __WEBPACK_IMPORTED_MODULE_1__sortable_header_component__["a" /* default */]).name;
+
+/***/ }),
+/* 139 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_html__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_header_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__sortable_header_html__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -79399,21 +79536,21 @@ var SortableHeaderComponent = {
 /* harmony default export */ __webpack_exports__["a"] = (SortableHeaderComponent);
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports) {
 
 module.exports = "<div ng-click=\"$ctrl.changeSort($ctrl.name)\" class=\"sortable\">\r\n    <ng-transclude></ng-transclude>\r\n    <span ng-show=\"$ctrl.sortBy == $ctrl.name\">\r\n            <i ng-class=\"[$ctrl.sortOrder=='asc' ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down']\"class=\"glyphicon\"></i>\r\n    </span>\r\n</div>";
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(141);
+__webpack_require__(142);
 module.exports = 'angular-loading-bar';
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports) {
 
 /*! 
@@ -79760,12 +79897,12 @@ angular.module('cfp.loadingBar', [])
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(5), __webpack_require__(143));
+		module.exports = factory(__webpack_require__(4), __webpack_require__(144));
 	else if(typeof define === 'function' && define.amd)
 		define(["angular", "sweetalert2"], factory);
 	else {
@@ -79970,7 +80107,7 @@ var ngSweetAlert2 = moduleName;
 });
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -81803,16 +81940,16 @@ if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(145);
+__webpack_require__(146);
 
 module.exports = 'ui.bootstrap';
 
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 /*
@@ -89618,20 +89755,6 @@ angular.module('ui.bootstrap.datepickerPopup').run(function() {!angular.$$csp().
 angular.module('ui.bootstrap.tooltip').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTooltipCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style>'); angular.$$uibTooltipCss = true; });
 angular.module('ui.bootstrap.timepicker').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTimepickerCss && angular.element(document).find('head').prepend('<style type="text/css">.uib-time input{width:50px;}</style>'); angular.$$uibTimepickerCss = true; });
 angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTypeaheadCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style>'); angular.$$uibTypeaheadCss = true; });
-
-/***/ }),
-/* 146 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PartialsModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_header_module__ = __webpack_require__(137);
-
-
-
-var PartialsModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('PartialsModule', [__WEBPACK_IMPORTED_MODULE_1__sortable_header_module__["a" /* SortableHeaderModule */]]).name;
 
 /***/ })
 /******/ ]);

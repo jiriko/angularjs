@@ -36,10 +36,10 @@
     <tbody>
         <tr ng-repeat="student in $ctrl.students">
             <td>
-                <span editable-text="student.name" e-name="email" onaftersave="$ctrl.updateStudent($data, 'name', student)" e-required>{{ student.name || 'name' }}</span>
+                <span editable-text="student.name" onaftersave="$ctrl.updateStudent($data, 'name', student)" e-required>{{ student.name || 'name' }}</span>
             </td>
             <td>
-                <span editable-text="student.email" e-name="email" onbeforesave="$ctrl.checkEmail($data, student)" onaftersave="$ctrl.updateStudent($data, 'email', student)" e-required>{{ student.email || 'email' }}</span>
+                <span editable-text="student.email" onbeforesave="$ctrl.checkEmail($data, student)" onaftersave="$ctrl.updateStudent($data, 'email', student)" e-required>{{ student.email || 'email' }}</span>
             </td>
             <td>{{ student.created }}</td>
             <td>

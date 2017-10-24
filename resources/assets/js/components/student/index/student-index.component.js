@@ -6,31 +6,50 @@ const StudentIndexComponent = {
     },
     template,
     controller: class StudentIndexComponent {
-        constructor($state, swal, StudentService, EnrollmentService) {
+        constructor($state, swal, StudentService, EnrollmentService, $location) {
             'ngInject'
             this.swal = swal
             this.studentService = StudentService
             this.enrollmentService = EnrollmentService
+            this.$state = $state
+            this.$location = $location
         }
 
         $onInit() {
-            this.query = ''
-            this.refreshData(this.studentResource)
-            this.sortOrder = 'desc'
-            this.sortBy = 'created_at'
+            this.query = this.$location.search().query
+            this.sortOrder = this.$location.search().sort
+            this.sortBy = this.$location.search().sortBy
+            this.currentPage =  this.$location.search().page
+
+            console.log(this.currentPage)
 
             this.fetchStudents = _.debounce(() => {
-                this.studentService.all({
+                let data = {
                     page: this.currentPage,
                     query: this.query,
                     sortBy: this.sortBy,
                     sort: this.sortOrder
-                })
+                }
+
+                this.$location.search(_.omit(data, _.isEmpty));
+
+                this.studentService.all(data)
                     .then((response) => {
                         this.refreshData(response)
                         window.scrollTo(200, 0);
                     })
             },300)
+
+            this.studentService.all({
+                page: this.currentPage,
+                query: this.query,
+                sortBy: this.sortBy,
+                sort: this.sortOrder
+            })
+            .then((response) => {
+                this.refreshData(response)
+                window.scrollTo(200, 0);
+            })
         }
 
         changeSort({sortBy}) {
