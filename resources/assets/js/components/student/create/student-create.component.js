@@ -20,7 +20,7 @@ const StudentCreateComponent = {
                 email: ''
             }, this.$http)
 
-            this.$scope.form.watch(this.$scope);
+            this.$scope.form.watch(this.$scope)
         }
 
         submitStudent() {
