@@ -19,7 +19,18 @@ class CreateEnrollmentsTable extends Migration
             $table->unsignedInteger('subject_id')->index();
             $table->timestamps();
 
-            $table->unique(['student_id','subject_id']);
+            $table->unique(['student_id', 'subject_id']);
+            $table->foreign('student_id')
+                ->references('id')
+                ->on('students')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
+            $table->foreign('subject_id')
+                ->references('id')
+                ->on('subjects')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
