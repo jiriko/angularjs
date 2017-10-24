@@ -23,9 +23,9 @@ class Form {
         for (let field in scope.form.originalData) {
             scope.$watch(`form.${field}`, (value) => {
                 if(value) {
-                    scope.form.errors.clear(field);
+                    scope.form.errors.clear(field)
                 }
-            },true);
+            },true)
         }
     }
 
@@ -112,16 +112,16 @@ class Form {
         return new Promise((resolve, reject) => {
            this.$http[requestType](url, this.data())
                 .then(response => {
-                    this.onSuccess(response.data);
+                    this.onSuccess(response.data)
 
-                    resolve(response.data);
+                    resolve(response.data)
                 })
                 .catch(error => {
-                    this.onFail(error.data.errors);
+                    this.onFail(error.data.errors)
 
-                    reject(error.data.errors);
-                });
-        });
+                    reject(error.data.errors)
+                })
+        })
     }
 
 

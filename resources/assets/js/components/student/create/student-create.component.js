@@ -1,5 +1,5 @@
 import template from './student-create.html'
-import Form from "../../../util/form";
+import Form from "../../../util/form"
 
 const StudentCreateComponent = {
     template,
