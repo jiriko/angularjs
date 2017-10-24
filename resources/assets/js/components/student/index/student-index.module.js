@@ -4,9 +4,10 @@ import StudentIndexComponent from './student-index.component'
 import StudentListModule from './student-list.module'
 import StudentService from '../student.service'
 import EnrollmentService from '../enrollment.service'
+import { SortableHeader } from '../../util'
 
 export const StudentIndexModule = angular
-    .module('StudentIndex', [uiRouter, StudentListModule])
+    .module('StudentIndex', [uiRouter, StudentListModule, SortableHeader])
     .component('student', StudentIndexComponent)
     .service('StudentService', StudentService)
     .service('EnrollmentService', EnrollmentService)

@@ -1,26 +1,26 @@
 <table class="table table-striped">
    <thead>
-        <th ng-click="$ctrl.changeSort('name')" class="sortable">
-            Name
-            <span ng-show="$ctrl.sortBy == 'name'">
-                <i ng-class="[$ctrl.sortOrder=='asc' ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down']"
-                   class="glyphicon"></i>
-            </span>
-        </th>
-        <th ng-click="$ctrl.changeSort('email')" class="sortable">
-            Email
-            <span ng-show="$ctrl.sortBy == 'email'">
-                <i ng-class="[$ctrl.sortOrder=='asc' ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down']"
-                   class="glyphicon"></i>
-            </span>
-        </th>
-        <th ng-click="$ctrl.changeSort('created_at')" class="sortable">
-            Enrolled
-            <span ng-show="$ctrl.sortBy == 'created_at'">
-                <i ng-class="[$ctrl.sortOrder=='asc' ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down']"
-                   class="glyphicon"></i>
-            </span>
-        </th>
+        <sortable-header
+            name="'name'"
+            sort-order="$ctrl.sortOrder"
+            sort-by="$ctrl.sortBy"
+            on-sort-change="$ctrl.changeSort($event)"
+        >
+        </sortable-header>
+        <sortable-header
+                name="'email'"
+                sort-order="$ctrl.sortOrder"
+                sort-by="$ctrl.sortBy"
+                on-sort-change="$ctrl.changeSort($event)"
+        >
+        </sortable-header>
+        <sortable-header
+                name="'created_at'"
+                sort-order="$ctrl.sortOrder"
+                sort-by="$ctrl.sortBy"
+                on-sort-change="$ctrl.changeSort($event)"
+        >
+        </sortable-header>
         <th>Subjects</th>
         <th>Actions</th>
    </thead>
