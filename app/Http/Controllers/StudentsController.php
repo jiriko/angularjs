@@ -12,9 +12,7 @@ class StudentsController extends Controller
     public function index(StudentFilters $filters)
     {
         return StudentResource::collection(
-            Student::with('subjects')
-                ->filter($filters)
-                ->paginate(5)
+            Student::fetch($filters)
         );
     }
 
