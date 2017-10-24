@@ -18,6 +18,18 @@ class StudentsController extends Controller
         );
     }
 
+    public function store()
+    {
+        $student = Student::create(
+            request()->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:students'
+            ])
+        );
+
+        return new StudentResource($student);
+    }
+
     public function update(Student $student)
     {
         $student->update(request()->validate([

@@ -59,6 +59,8 @@ i.warning-red {
 
 @import '~angular-loading-bar/build/loading-bar.css';
 
+@import './ball-fall';
+
 .editable-input {
   width:60% !important;
 }
@@ -97,4 +99,12 @@ body {
 
 .ml-2 {
   margin-left: 2em;
+}
+
+.mb-2 {
+  margin-bottom: 2em;
+}
+
+.mb-3 {
+  margin-bottom: 3em;
 }

@@ -17,11 +17,7 @@ Route::prefix('api')->group(function () {
 
     Route::delete('enrollments/{enrollment}', ['uses' => 'EnrollmentsController@destroy'])->name('enrollments.destroy');
 
-
-    Route::get('students', ['uses' => 'StudentsController@index'])->name('students.index');
-    Route::put('students/{student}', ['uses' => 'StudentsController@update'])->name('students.update');
-    Route::delete('students/{student}', ['uses' => 'StudentsController@destroy'])->name('student.destroy');
-
+    Route::resource('students','StudentsController', ['only' => ['index','update','destroy','store']]);
 
     Route::get('subjects', ['uses' => 'SubjectsController@index'])->name('subjects.index');
 

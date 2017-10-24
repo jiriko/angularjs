@@ -13,6 +13,19 @@ class StudentTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    function a_user_can_create_a_student()
+    {
+        $student = [
+            'name' => 'Jiriko Lapa',
+            'email' => 'jiriko@yahoo.com'
+        ];
+
+        $this->post('/api/students', $student)->assertStatus(201);
+
+        $this->assertDatabaseHas('students', $student);
+    }
+
+    /** @test */
     function a_user_can_update_a_student()
     {
         $student = create(Student::class);

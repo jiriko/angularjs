@@ -1,24 +1,32 @@
 <div class="row">
-    <div class="col-md-8">
-        <h4>Students</h4>
+    <div class="col-md-12 mb-2">
+        <h4 class="float-left"><i class="glyphicon glyphicon-plus"></i> Create Student</h4>
     </div>
-    <div class="col-md-4">
-        <input ng-model="$ctrl.query"
-               class="form-control"
-               ng-keyup="$ctrl.searchStudents()"
-               placeholder="search...">
+    <div class="col-md-6 col-sm-12">
+        <form>
+            <div class="form-group"
+                 ng-class="{'has-error' : $ctrl.form.errors.has('name')}"
+            >
+                <label class="control-label" for="name">Name:</label>
+                <input ng-model="$ctrl.form.name" class="form-control" id="name">
+                <span class="help-block error" ng-if="$ctrl.form.errors.has('name')" ng-bind="$ctrl.form.errors.get('name')"></span>
+            </div>
+            <div class="form-group"
+                 ng-class="{'has-error' : $ctrl.form.errors.has('email')}"
+            >
+                <label class="control-label" for="pwd">Email:</label>
+                <input ng-model="$ctrl.form.email" class="form-control" id="email">
+                <span class="help-block error" ng-if="$ctrl.form.errors.has('email')" ng-bind="$ctrl.form.errors.get('email')"></span>
+            </div>
+            <a href ui-sref="students-index" class="btn btn-danger">Cancel</a>
+            <button type="submit" ng-click="$ctrl.submitStudent()" :disable="$ctrl.form.errors.any() || $ctrl.form.submitting" class="btn btn-primary">
+                <span ng-show="! $ctrl.form.submitting"><i class="fa fa-save"></i> Save</span>
+                <div class="la-ball-fall-2" ng-show="$ctrl.form.submitting">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </button>
+        </form>
     </div>
 </div>
-<br>
-<student-list students="$ctrl.students"
-              on-update-student="$ctrl.updateStudent($event)"
-              on-remove-subject="$ctrl.removeSubject($event)"
-              on-add-subject="$ctrl.addSubject($event)"
-              on-remove-student="$ctrl.removeStudent($event)"
-></student-list>
-
-<ul uib-pagination
-    total-items="$ctrl.totalItems"
-    ng-model="$ctrl.currentPage"
-    items-per-page="$ctrl.perPage"
-    ng-change="$ctrl.fetchStudents()"></ul>
